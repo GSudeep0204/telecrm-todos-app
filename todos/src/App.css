@@ -1,38 +1,171 @@
-.App {
+
+body{
+  background-color: #def0f2;
+}
+.App{
+  background-color: #def0f2;
+}
+#modal{
+  display:none;
+ 
+}
+input{
+  width:30%;
+  height: 40px;
+  border-radius: 15px 0px 0px 15px;
+  border-color : red solid 2px;
+}
+.input{
+  margin-top: 30px;
+ text-align: center;
+}
+#button{
+  width:15%;
+  height: 40px;
+  border-radius: 0px 15px 15px 0px;
+  margin-bottom: 7px;
+}
+#todos{
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  
+}
+#todos>div{
+  
+  width:90%;
+  margin: auto;
+  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  background-color: #99ced6;
+  height:530px;
+  overflow-y: scroll;
+}
+
+
+.header{
+  height: 80px;
   text-align: center;
+  background-color: #7ab6c1;
+  padding:20px;
+  color:#7b68ee;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.flex{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-left: 10px;
+}
+
+.flexhead{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  border-radius: 5px;
+  
+}
+
+.flexbody{
+  display: flex;
+  justify-content: space-between;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-bottom: 5px;
+  box-shadow: rgb(222,240,242,0.15) 0px 48px 100px 0px;
+  border:solid 1px gray;
+  border-radius: 5px;
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.flex::-webkit-scrollbar{
+  display: none;
+}
+#right{
+width:30px;
+height: 40px;
+}
+.flex>h4{
+ margin-left: 20px;
+}
+.flexbody>.flex>h4{
+  margin-left: 20px;
+  text-decoration: line-through red;
+ }
+.tagline{
+  text-align: center;
+  animation: tagline infinite 1s;
+  transition: scale(0.5);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* @keyframes {
+  0% {
+    width:30%;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    width:30%;
+  }
+} */
+
+#add{
+  background-color: white;
+  color:#7ab6c1 ;
+}
+
+@media screen and (max-width:761px){
+  #todos{
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+   
+  }
+
+  #todos>div{
+    /* width:90%;
+    margin: auto;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+    background-color: #99ced6; */
+    height:300px; 
+     /* overflow-y: scroll; */
+    margin-bottom: 10px;
   }
 }
+
+#todos>div::-webkit-scrollbar{
+ display: none;
+}
+@media screen and (max-width:450px) {
+  #modal{
+    display: block;
+    position: fixed;
+    top:90%;
+    left: 45%;
+    background-color:white;
+    color: #7ab6c1;
+    border-radius: 50%;
+    text-align: center;
+    border:white solid 1px;
+    cursor: pointer;
+  }
+  .input{
+    display: none;
+  }
+}
+
+
+@media screen and (max-width:900px){
+  #button{
+    display: block;
+    text-align: center;
+    margin: auto;
+    width: 33%;
+    border-radius: 15px;
+    margin-top: 10px;
+  }
+  input{
+    border-radius: 15px;
+    width: 70%;
+    margin: auto;
+  }
+}
+
+
