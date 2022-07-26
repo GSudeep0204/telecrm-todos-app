@@ -4,19 +4,24 @@ import {useState,useEffect} from "react";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Button,Form } from 'react-bootstrap';
 import { MdDelete , } from "react-icons/md";
-import Modals from './Components/Modal';
+import Modal from 'react-bootstrap/Modal';
+import { AiOutlinePlus } from "react-icons/ai";
 
 function App() {
 
   const [todo,setTodo] = useState("");
   const [todos,setTodos] = useState([]);
   const [finished,setFinished] = useState([]);
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
  const handletodos = ()=>{
   
   if(todo==="") return 
   setTodos([...todos,todo]);
   setTodo("");
- 
+   handleClose();
  }
 
  useEffect(()=>{
@@ -38,8 +43,32 @@ function App() {
         }} />
         <Button  variant="primary" onClick={handletodos} id="button">ADD TO TODOS</Button>
       </div>
-     
       
+     <div>
+      <Button  onClick={handleShow} id="modal"  >
+       <AiOutlinePlus />
+      </Button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Todos</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+            <input placeholder='Enter Todos' value={todo} onChange={(e)=>{
+            
+          setTodo(e.target.value)
+          console.log(todo);
+          }} /> 
+        </Modal.Body>
+        <Modal.Footer>
+         
+          <Button variant="primary" onClick={handletodos}>
+            ADD TO TODOS
+          </Button>
+        </Modal.Footer>
+      </Modal>
+    
+    </div>
         <div id="todos">
           <div >
             <h1 >Up Coming</h1>
@@ -100,11 +129,10 @@ function App() {
           </div>
         </div>
 
-
-     <Modals />
-
      <div className="tagline">
-      <h6>made with  by Sudeep Gudekota</h6>
+        
+      <h6 >made with ❤️ by Sudeep Gudekota</h6>
+     
      </div>
     </div>
 

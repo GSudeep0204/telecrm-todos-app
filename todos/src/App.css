@@ -92,19 +92,26 @@ height: 40px;
   text-decoration: line-through red;
  }
 .tagline{
-  text-align: center;
-  animation: tagline infinite 1s;
-  transition: scale(0.5);
+ margin: auto;
+  color: black;
+  animation: alternate infinite tagline 10s;
+  font-weight: 500;
+  width: 10ch;
+  overflow: hidden;
+  white-space: nowrap; 
+  animation: tagline 10s  infinite alternate;
+  border-right: 3px solid #5e82f4; 
 }
 
-/* @keyframes {
+@keyframes tagline {
   0% {
-    width:30%;
+      width:0ch;
   }
   50% {
-    width:30%;
+      width: 30ch;
   }
-} */
+ }
+ 
 
 #add{
   background-color: white;
@@ -167,5 +174,4 @@ height: 40px;
     margin: auto;
   }
 }
-
 
