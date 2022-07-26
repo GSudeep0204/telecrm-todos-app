@@ -8,25 +8,25 @@ import Modal from 'react-bootstrap/Modal';
 import { AiOutlinePlus } from "react-icons/ai";
 
 function App() {
-
+ const [del,setDel] = useState("");
   const [todo,setTodo] = useState("");
-  const [todos,setTodos] = useState([]);
-  const [finished,setFinished] = useState([]);
+  const [todos,setTodos] = useState(["Assignment"]);
+  const [finished,setFinished] = useState(["Test"]);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
- const handletodos = ()=>{
-  
-  if(todo==="") return 
+ 
+  const handletodos = ()=>{
+  if(todo.trim()==="") return 
   setTodos([...todos,todo]);
   setTodo("");
-   handleClose();
+  
  }
 
  useEffect(()=>{
-
- },[todo,todos,finished])
+console.log("sudeep");
+ },[todos,finished,del])
 
   return (
     <div className="App">
@@ -71,7 +71,7 @@ function App() {
     </div>
         <div id="todos">
           <div >
-            <h1 >Up Coming</h1>
+            <h1 className='margin'>Up Coming</h1>
             <hr />
             {todos ? todos.map((e,i)=>{
             return (
@@ -81,7 +81,6 @@ function App() {
              <Form.Check type="checkbox" onClick={()=>{
               setFinished([...finished,todos[i]]);
               todos.splice(i,1);
-             
              }} />
              </Form.Group>
 
@@ -89,9 +88,8 @@ function App() {
               </div>
               <div id='icon'>
               <MdDelete id="right" onClick={()=>{
+                setDel(e+i);
                 todos.splice(i,1);
-                console.log(i);
-                setTodos(todos);
               }} />
               </div>
          </div>
@@ -101,7 +99,7 @@ function App() {
 
       </div>
           <div>
-            <h1>Finished</h1>
+            <h1 className='margin'>Finished</h1>
             <hr/>
             {finished ? finished.map((e,i)=>{
           return (
@@ -119,6 +117,7 @@ function App() {
               <div id='icon'>
               <MdDelete id="right" onClick={()=>{
               finished.splice(i,1);
+              setDel(e+i);
              }} />
               </div>
             </div>

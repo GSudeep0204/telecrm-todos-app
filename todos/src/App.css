@@ -47,7 +47,7 @@ input{
   text-align: center;
   background-color: #7ab6c1;
   padding:20px;
-  color:#7b68ee;
+ 
 }
 .flex{
   display: flex;
@@ -75,7 +75,7 @@ input{
   box-shadow: rgb(222,240,242,0.15) 0px 48px 100px 0px;
   border:solid 1px gray;
   border-radius: 5px;
-  color: white;
+  color: black;
 }
 .flex::-webkit-scrollbar{
   display: none;
@@ -83,6 +83,7 @@ input{
 #right{
 width:30px;
 height: 40px;
+color:black;
 }
 .flex>h4{
  margin-left: 20px;
@@ -117,6 +118,9 @@ height: 40px;
   background-color: white;
   color:#7ab6c1 ;
 }
+.margin{
+  margin-left: 20px;
+}
 
 @media screen and (max-width:761px){
   #todos{
@@ -127,12 +131,7 @@ height: 40px;
   }
 
   #todos>div{
-    /* width:90%;
-    margin: auto;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    background-color: #99ced6; */
     height:300px; 
-     /* overflow-y: scroll; */
     margin-bottom: 10px;
   }
 }
